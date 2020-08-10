@@ -17,7 +17,6 @@ export class NextDayWeatherComponent implements OnInit {
 
   ngOnChanges(){
     if(this.data)
-    console.log(this.data)
     
     this.data.forEach(val => {
 
@@ -31,7 +30,7 @@ export class NextDayWeatherComponent implements OnInit {
     val.feels_like.morn = this.KelCel(val.feels_like.morn)
     val.feels_like.night = this.KelCel(val.feels_like.night)
 
-    this.img = 'http://openweathermap.org/img/wn/' + val.weather[0].icon + '.png'
+    val.img = 'http://openweathermap.org/img/wn/' + val.weather[0].icon + '.png'
     
     });
   }

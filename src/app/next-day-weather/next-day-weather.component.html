@@ -6,13 +6,13 @@
       <mat-expansion-panel-header>
         <div class="row" style="width: 100%;">
             <div class="col-lg-6">
-                <mat-panel-title style="padding-top: 10px;">
+                <mat-panel-title style="padding-top: 13px;">
                     {{item.dt*1000 | date:'mediumDate'}}
                 </mat-panel-title>
         </div>
         <div class="col-lg-6">
             <mat-panel-description class="box">
-                        <img src="{{img}}">
+                        <img src="{{item.img}}">
                         <small style="padding-top: 16px;">
                         {{item.weather[0].description}}</small>
             </mat-panel-description>
@@ -59,10 +59,10 @@
                 UV: {{item.uvi}}
             </div>
             <div class="col-lg-3"> 
-                Sunrise: {{item.sunrise | date:'shortTime'}}
+                Sunrise: {{item.sunrise*1000 | date:'shortTime'}}
             </div>
             <div class="col-lg-3"> 
-                Sunset {{item.sunset | date:'shortTime'}}
+                Sunset {{item.sunset*1000 | date:'shortTime'}}
             </div>
             
         </div>

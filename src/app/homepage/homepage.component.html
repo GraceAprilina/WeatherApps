@@ -11,7 +11,7 @@
           <h5>{{address}}</h5>
           <div class="row">
             <div class="col-lg-8">
-              <small>{{jam | date:'mediumDate'}} || {{jam | date:'shortTime'}}</small>
+              <small>{{jam | date:'mediumDate'}} || Updated: {{jam | date:'shortTime'}}</small>
               <h1 class="mt-2">{{suhu}}°C</h1>
             </div>
             <div class="col-lg-4">
@@ -24,6 +24,20 @@
             <div class="col-lg-4">
               {{suhu}}°C / {{atmosphere}}°C
             </div>
+          </div><hr>
+          <div class="row">
+              <div class="col-lg-3"> 
+                  Humidity: {{humidity}}
+              </div>
+              <div class="col-lg-3"> 
+                  UV: {{uvi}}
+              </div>
+              <div class="col-lg-3"> 
+                  Sunrise: {{sunrise*1000 | date:'shortTime'}}
+              </div>
+              <div class="col-lg-3"> 
+                  Sunset {{sunset*1000 | date:'shortTime'}}
+              </div>                
           </div>
         </div>
     </div>

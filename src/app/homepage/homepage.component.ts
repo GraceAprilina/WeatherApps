@@ -25,6 +25,10 @@ export class HomepageComponent implements OnInit {
   cuaca
   idicon
   atmosphere
+  humidity
+  uvi
+  sunrise
+  sunset
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
@@ -102,7 +106,6 @@ export class HomepageComponent implements OnInit {
       console.log(data)
       let datanya:any = data
       this.dataCuaca = datanya.daily
-      console.log(this.dataCuaca)
       this.jam = datanya.hourly[0].dt * 1000
 
       let hasilsuhu = datanya.hourly[0].temp - 273.15
@@ -114,6 +117,10 @@ export class HomepageComponent implements OnInit {
       this.cuaca = datanya.hourly[0].weather[0].description
       this.idicon = datanya.hourly[0].weather[0].icon
 
+      this.humidity = datanya.daily[0].humidity
+      this.uvi = datanya.daily[0].uvi
+      this.sunrise = datanya.daily[0].sunrise
+      this.sunset = datanya.daily[0].sunset
         // this.weatherService.getIconHuge(idicon).subscribe((dataicon:any[])=>{
         //   console.log(dataicon)
         // })
