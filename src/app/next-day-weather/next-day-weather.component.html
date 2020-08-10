@@ -1,0 +1,72 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let item of data"
+                        (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false"
+                         >
+      <mat-expansion-panel-header>
+        <div class="row" style="width: 100%;">
+            <div class="col-lg-6">
+                <mat-panel-title style="padding-top: 10px;">
+                    {{item.dt*1000 | date:'mediumDate'}}
+                </mat-panel-title>
+        </div>
+        <div class="col-lg-6">
+            <mat-panel-description class="box">
+                        <img src="{{img}}">
+                        <small style="padding-top: 16px;">
+                        {{item.weather[0].description}}</small>
+            </mat-panel-description>
+        </div>
+        </div>
+      </mat-expansion-panel-header>
+      <hr>
+        <div class="row" >
+            <div class="col-lg-2" style="padding-top: 1rem;">
+                <p>Temperature</p>
+                <p>Feels Like</p>
+            </div>
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-lg-3">
+                        Morning<br>
+                        <p> {{item.temp.morn}}°C </p>
+                        <p> {{item.feels_like.morn}}°C </p>
+                    </div>
+                    <div class="col-lg-3">
+                        Afternoon<br>
+                        <p> {{item.temp.day}}°C </p>
+                        <p> {{item.feels_like.day}}°C </p>
+                    </div>
+                    <div class="col-lg-3">
+                        Evening<br>
+                        <p> {{item.temp.eve}}°C </p>
+                        <p> {{item.feels_like.eve}}°C </p>
+                    </div>
+                    <div class="col-lg-3">
+                        Night<br>
+                        <p> {{item.temp.night}}°C </p>
+                        <p> {{item.feels_like.night}}°C </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3"> 
+                Humidity: {{item.humidity}}
+            </div>
+            <div class="col-lg-3"> 
+                UV: {{item.uvi}}
+            </div>
+            <div class="col-lg-3"> 
+                Sunrise: {{item.sunrise | date:'shortTime'}}
+            </div>
+            <div class="col-lg-3"> 
+                Sunset {{item.sunset | date:'shortTime'}}
+            </div>
+            
+        </div>
+        
+    </mat-expansion-panel>
+  </mat-accordion>
+  
